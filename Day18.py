@@ -27,9 +27,9 @@ def calc_avg(score: list[int]) -> float:
     return sum(scores)/len(scores)
 def get_failed_scores(score:list[int]) -> list[int]:
     failed_stu = []
-    for score in scores:
-        if score <60:
-            failed_stu.append(score)
+    for stu_score in scores:
+        if stu_score <60:
+            failed_stu.append(stu_score)
     return failed_stu
 def calc_score(scores:list[int]) -> None:
     avg = calc_avg(scores)
