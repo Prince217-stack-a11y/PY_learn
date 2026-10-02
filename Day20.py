@@ -12,3 +12,5 @@ base_url = os.getenv("DEEPSEEK_BASE_URL")
 print("API Key 是否加载：", bool(api_key))
 print("Base URL：", base_url)
 
+
+
