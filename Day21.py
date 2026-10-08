@@ -406,3 +406,98 @@
 # if __name__ == "__main__":
 #     run_chat()
 
+# import os
+# from pathlib import Path
+
+# import openai
+# from openai import OpenAI
+# from dotenv import load_dotenv
+
+# # 读取当前目录下的 .env
+# load_dotenv(Path(__file__).with_name(".env"))
+
+# api_key = (os.getenv("DEEPSEEK_API_KEY") or "").strip()
+# base_url = (
+#     os.getenv("DEEPSEEK_BASE_URL")
+#     or "https://api.deepseek.com"
+# ).strip()
+# model = (
+#     os.getenv("DEEPSEEK_MODEL")
+#     or "deepseek-chat"
+# ).strip()
+
+# if not api_key:
+#     raise SystemExit("DEEPSEEK_API_KEY 未配置")
+
+# client = OpenAI(
+#     api_key=api_key,
+#     base_url=base_url,
+#     timeout=60,
+#     max_retries=0,
+# )
+
+# system_message = {
+#     "role": "system",
+#     "content": "你是一个简洁、准确的 Python 助手。",
+# }
+
+# messages = [system_message]
+
+# while True:
+#     user_input = input("你：").strip()
+
+#     if not user_input:
+#         continue
+
+#     if user_input.lower() in {"exit", "/exit", "quit", "/quit"}:
+#         print("Bye")
+#         break
+
+#     if user_input == "/reset":
+#         messages = [system_message]
+#         print("对话已重置")
+#         continue
+
+#     messages.append({
+#         "role": "user",
+#         "content": user_input,
+#     })
+
+#     try:
+#         response = client.chat.completions.create(
+#             model=model,
+#             messages=messages,
+#             stream=False,
+#         )
+
+#     except openai.OpenAIError as error:
+#         # 请求失败时，不要让失败的 user 消息留在历史里
+#         messages.pop()
+#         print(f"请求失败：{error}")
+#         continue
+
+#     if not response.choices:
+#         messages.pop()
+#         print("模型没有返回回答")
+#         continue
+
+#     reply = response.choices[0].message.content
+
+#     if not reply:
+#         messages.pop()
+#         print("模型返回了空回答")
+#         continue
+
+#     messages.append({
+#         "role": "assistant",
+#         "content": reply,
+#     })
+
+#     print(f"AI：{reply}")
+
+#     if response.usage:
+#         print(
+#             f"Token：输入 {response.usage.prompt_tokens}，"
+#             f"输出 {response.usage.completion_tokens}，"
+#             f"总计 {response.usage.total_tokens}"
+#         )
