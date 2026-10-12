@@ -1,6 +1,6 @@
 import save
 
-from PY_learn.PY_learn.day17_json.todo_persist import add_task
+from PY_learn.PY_learn.projects.day17_json.todo_persist import add_task
 
 tasks = []
 while True:
