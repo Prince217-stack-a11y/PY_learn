@@ -22,7 +22,7 @@
 1. 每天练习：进 `exercises/`，统一成 dayNN 命名，和计划天数对应；
 2. 成块的练习：进 `projects/`，一个文件夹一个项目，可以整个拷走；
 3. 笔记和材料：分别进 `notes/` 和 `materials/`；
-4. 一次性脚本、测试输出：进 `_sandbox/`，确认没用的直接删。
+4. 一次性脚本、测试输出：进 `_sandbox/`。
 
 根目录只留和仓库本身有关的东西（README、requirements、.gitignore）。另外有几个数据文件必须和对应脚本放在同一个目录（todo.json、sample.log、student_example.json、todo_example.json），因为代码里是按脚本位置读取的，整理时没有拆开它们。
 
