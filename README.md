@@ -6,6 +6,7 @@
 
 - `exercises/`：每天跟着学习计划写的练习，统一用 dayNN 命名（按学习计划的天数编号），练习用到的样例数据（todo.json、sample.log 等）放在脚本旁边，因为代码里是按脚本所在位置读取的。
 - `notes/agent/`：智能体学习阶段的笔记和观察记录（day22 之后的 md 都归在这里）。
+  - `notes/agent/hello-agents/`：**Hello-Agents 教材（datawhalechina/hello-agents）学习笔记**，共 13 篇 + README，含结构对比、速查 Q&A 与代码阅读顺序。**该部分由 AI 辅助整理**，详见 [notes/agent/hello-agents/README.md](notes/agent/hello-agents/README.md) 顶部的 AI 声明。
 - `projects/`：成块的练习项目，一个项目一个文件夹：
   - `day17_json/`：JSON 持久化待办练习
   - `day21_deepseek/`：调用大模型接口的命令行对话练习
